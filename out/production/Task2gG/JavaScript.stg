@@ -1,0 +1,91 @@
+program(statement) ::= "<statement; separator=\"\n\">"
+decl (id,exprAll)::= "let <id> = <exprAll>;"
+declnoexpr(id) ::= "var <id>;"
+param(id) ::= "<id>"
+declFunc (id,params,block) ::= "function <id>(<params>)<block>"
+
+
+
+//declarr1(id, expr1) ::= "<id> = [<expr1>];"
+declarr(id, exprArr) ::= "let <id> = [<exprArr>];"
+
+exprArr(elements)::= "<elements>"
+//floatExprArr(elements)::= "<elements>"
+//boolExprArr(elements)::= "<elements>"
+//stringExprArr(elements)::= "<elements>"
+
+ifelse(boolexpr, block1,block2) ::= "if (<boolexpr>) <block1> else <block2>"
+for(id,expr, boolexpr, assign, block) ::= "for (<id> = <expr>; <boolexpr>; <assign>) <block>"
+while(boolexpr, block) ::= "while (<boolexpr>) <block>"
+do(block, boolexpr) ::= "do <block> while (<boolexpr>)"
+
+block(program) ::= <<
+{
+  <program>
+}
+>>
+
+
+
+exprAll(expr) ::= "<exprAll>"
+expr(expr) ::= "<expr>"
+
+
+
+AssignStmt(AssignStmt)::= "<AssignStmt>;"
+AssignToId(identifier, exprall) ::= "let <identifier> = <exprall>;"
+assignToIdAsArr(identifier, expr1, expr2) ::= "let <Identifier> [<expr1>] = <expr2>;"
+inclId(inc, identifier) ::= " <inc> <identifier>;"
+incIdAsArr(inc, identifier, expr) ::= " <inc> <identifier> [expr];"
+decId(dec, identifier) ::= "<dec> <identifier>;"
+decIdAsArr(dec, identifier, expr) ::= "<dec> <identifier> [expr];"
+
+
+
+input(identifier) ::= "console.in(<identifier>);"
+print(exprall) ::= "console.log(<exprall>);"
+return(exprall) ::= "return <exprall>;"
+funcCall(identifier, exprall1, exprall2) ::= "<identifier>((args +=<exprall>(, args+=<exprall>)*)?);"
+
+unknownId(identifier) ::= "<identifier>"
+unknownIdAsArr(identifier, exprall) ::= "<identifier> [<exprall>]"
+unknownFuncCall(identifier, exprall1, exprall2) ::= "<identifier> ((args +=<exprall1> (, args+=exprall2)*)?)"
+parenUnknown(unknownExpr) ::= "(<unknownExpr>)"
+
+
+int(int) ::= "<int>"
+float(float) ::="<float>"
+floatUnknown(unknownexpr) ::= "<unknownexpr>"
+parenFloat(floatexpr) ::= "(<floatexpr>)"
+
+boolExprBoolOp(boolexpr1, boolexpr2) ::= "<boolexpr1> && <boolexpr2> or <boolexpr1> || <boolexpr2> or <boolexpr1> xor <boolexpr2>"
+notBoolExpr(boolexpr) ::= "Not <boolexpr>"
+boolExprFloatOp(floatexpr1, floatexpr2) ::= "<floatexpr1> less than <floatexpr2> or <floatexpr1> less than or equal to <floatexpr2> or <floatexpr1> greater than <floatexp2> or <floatexpr1> greater than or equal to <floatexpr2> or <floatexpr1> equal to <floatexpr2> or <floatexpr1> not equal to <floatexpr2>"
+boolExprTrue(True) ::= "<True>"
+boolExprFalse(False) ::= "<False>"
+boolUnknown(unknownexpr) ::= "<unknownexpr>"
+parenBoolExpr(boolexpr) ::= "(<boolexpr>)"
+
+strCat(stringexpr1, stringexpr2) ::= "<stringexpr1> ## <stringexpr2>"
+str(string) ::= "<string>"
+strUnknown(unknownexpr) ::="<unknownexpr>"
+parenStr(stringexpr) ::= "(<stringexpr>)"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
